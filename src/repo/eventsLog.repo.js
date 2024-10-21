@@ -64,7 +64,6 @@ module.exports = container => {
             UPDATE "event_log"
             SET state = CASE id
     `;
-        // Duyệt qua các IDs và trạng thái tương ứng để tạo câu truy vấn
         ids.forEach((id, index) => {
             query += ` WHEN $${index * 2 + 1} THEN $${index * 2 + 2}`;
         });

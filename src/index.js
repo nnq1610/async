@@ -29,7 +29,6 @@ mediator.once('di.ready', container => {
         container.registerValue('controller', controller(container))
         container.registerValue('middleware', middleware(container))
 
-
         // Bắt đầu server
         server.start(container).then((app) => {
             console.log('Server started at port', app.address().port);
